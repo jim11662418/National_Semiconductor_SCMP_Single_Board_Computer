@@ -1,0 +1,39 @@
+Name SCMP-SBC;
+Partno ;
+Revision;
+Date 05/01/2021;
+Designer Jim Loos;
+Company ;
+Location ;
+Assembly ;
+Device G16V8A;
+
+/* Inputs:                                                  */
+Pin 2  = FL0;       /* from pin 19 of SC/MP                  */
+Pin 3  = NADS;      /* from pin 39 of SC/MP                 */      
+Pin 4  = A15;       /* from pin  9 of 74LS75                */
+Pin 5  = A14;       /* from pin 10 of 74LS75                */
+Pin 6  = A13;       /* from pin 15 of 74LS75                */
+Pin 7  = A12;       /* from pin 16 of 74LS75                */
+Pin 8  = NWDS;      /* from pin 1 of SC/MP                  */
+Pin 9  = NRDS;      /* from pin 2 of SC/MP                  */
+
+/* Outputs:                                                  */
+Pin 19 = TXD;       /* to PL2303 RX input                    */       
+Pin 18 = CLK;       /* to 74LS75 pins 4 and 13               */
+Pin 17 = ROMCS;     /* to 2764 pin 20                        */
+Pin 16 = RAMCS;     /* to 6264 pin 20                        */
+
+/*  just a reminder for me (Jim)... */
+/*  ! = NOT                         */
+/*  & = AND                         */
+/*  # = OR                          */
+/*  $ = XOR                         */
+
+TXD = !FL0;
+CLK = !NADS;
+
+/* Memory address decoding                                  */
+FIELD ADDRESS = [A15..A12];
+!ROMCS = ADDRESS:[0000..0FFF] # ADDRESS:[8000..8FFF] ;
+!RAMCS = ADDRESS:[1000..2FFF];
