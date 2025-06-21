@@ -8,3 +8,5 @@ A simple single board computer with Tiny BASIC for the National Semiconductor SC
 <p align="center">SC/MP Memory</p><br>
 <p align="center"><img src="/images/SC-MP GAL.png"/>
 <p align="center">SC/MP GAL</p><br>
+<p align="center"><img src="/images/SCMP SBC.png"/>
+<p align="center">SC/MP SBC</p><br>
